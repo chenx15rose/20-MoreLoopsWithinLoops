@@ -3,8 +3,8 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Harry Chen.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -50,12 +50,19 @@ def triangle_right_justified(r):
           12
          123
         1234
-       12345
+    ***12345
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+    for k in range(1,r+1,1):
+        for n in range(8-k):
+            print(' ',end='')
+        for j in range(k):
+            print (j+1,end='')
+        print()
+
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: Do the following problem FIRST, then convert x's to spaces:
@@ -108,8 +115,15 @@ def triangle_upside_down(r):
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+    for k in range(r,0,-1):
+        for n in range(8-k):
+            print(' ',end='')
+        for j in range(k):
+            print (j+1,end='')
+        print()
+
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -143,8 +157,8 @@ def vee(r):
     """
     Prints a "V" of numbers, with r rows.
     It looks like this example, when r = 5:
-        12345-54321
-         1234-4321
+    ****12345-54321
+    *****1234-4321
           123-321
            12-21
             1-1
@@ -152,15 +166,26 @@ def vee(r):
     Note the single dash ('-') in each row.
 
     Here is another example, when r = 3:
-         123-321
+    *****123-321
           12-21
            1-1
 
     Precondition:  r is a non-negative integer.
     For purposes of "lining up", assume r is a single digit.
     """
+    for k in range(r):
+        for n in range(k):
+            print(' ',end='')
+        for j in range(r):
+            print(j+1,end='')
+            if j ==r-1:
+                print('-',end='')
+                for s in range(r):
+                    print(r-s,end='')
+                print()
+                r=r-1
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -215,8 +240,15 @@ def numbers_constant_forward(r, maxnum, n):
 
     Preconditions:  r, maxnum and n are positive integers.
     """
+    for k in range(r):
+        for j in range(maxnum):
+            for s in range(n):
+                print(j+1,end='')
+            print(' ',end='')
+        print()
+
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: What loop structure do you need for this problem?
@@ -260,7 +292,7 @@ def numbers_constant_backwards(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -268,7 +300,12 @@ def numbers_constant_backwards(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
-
+    for k in range(r):
+        for j in range(maxnum,0,-1):
+            for s in range(n):
+                print(j,end='')
+            print(' ',end='')
+        print()
 
 def run_test_numbers_increasing_forward():
     """ Tests the    numbers_increasing_forward    function. """
@@ -311,8 +348,14 @@ def numbers_increasing_forward(r, maxnum):
 
     Preconditions:  r and maxnum are positive integers.
     """
+    for k in range(r):
+        for j in range(maxnum+1):
+            for s in range(j):
+                print(j, end='')
+            print(' ', end='')
+        print()
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # DONE: 7. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
