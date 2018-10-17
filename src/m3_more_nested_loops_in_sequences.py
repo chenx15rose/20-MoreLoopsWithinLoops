@@ -10,14 +10,14 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 def main():
     """ Calls the other functions to test them. """
     run_test_largest_number()
-    run_test_largest_negative_number()
-    run_test_first_is_elsewhere_too()
+    #run_test_largest_negative_number()
+    #run_test_first_is_elsewhere_too()
 
 
 def run_test_largest_number():
     """ Tests the    largest_number    function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  largest_number  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     # ------------------------------------------------------------------
@@ -78,8 +78,17 @@ def largest_number(seq_seq):
     """
     num = None
     for k in range(len(seq_seq)):
-    # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+        for j in range(len(seq_seq[k])):
+            sub = seq_seq[k]
+            if sub[j]!=None:
+                if num == None:
+                   num = sub[j]
+                elif num != None and sub[j] >num:
+                   num = sub[j]
+    return num
+
+    # -----------------------------------------------------------------
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
